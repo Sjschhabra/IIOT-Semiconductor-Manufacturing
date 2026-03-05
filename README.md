@@ -39,4 +39,34 @@ Sensor Data → MQTT (JSON) → Edge ML Processing → Database Storage → Real
 | Metric | Score | Interpretation |
 |:-------|:-----:|:---------------|
 | **Recall** | 79.8% | Catches 67 out of 84 defects |
-| **Precision** | 69.8% | 70% of alarms are real
+| **Precision** | 69.8% | 70% of alarms are real defects |
+| **Accuracy** | 94.5% | 798 out of 844 correct predictions |
+| **F1-Score** | 0.744 | Balanced performance |
+
+### Confusion Matrix
+
+|  | **Predicted: No Defect** | **Predicted: Defect** |
+|:---|:---:|:---:|
+| **Actual: No Defect** | 731 (TN) | 29 (FP) |
+| **Actual: Defect** | 17 (FN) | 67 (TP) |
+
+**Results:**
+- ✅ **True Positives (67):** Defects correctly identified
+- ❌ **False Negatives (17):** Missed defects  
+- ⚠️ **False Positives (29):** False alarms
+- ✅ **True Negatives (731):** Good wafers correctly identified
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Python 3.8+
+- PostgreSQL 13+
+- MQTT Broker (HiveMQ Cloud)
+
+### Installation
+
+**1. Clone Repository**
+```bash
